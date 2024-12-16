@@ -26,7 +26,6 @@ Welcome to my portfolio! An outline of my completed projects that highlight my a
      ![Shift Data Model Dashboard Overview](Shift_Model.png)  
    - *Detailed view of state-specific user data:*
      ![Shift Data Model State View](Descriptive_Shift_Model.png)  
-     *(Replace these file names with the actual image files.)*
 
 ---
 
