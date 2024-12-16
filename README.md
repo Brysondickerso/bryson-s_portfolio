@@ -55,4 +55,4 @@ The Free Trial Dashboard analyzes the performance and engagement of users with N
   ![Free Trial Dashboard Engagement](freetrial.png)
 
 - Feature usage analysis chart:  
-  ![Free Trial Feature Usage](free_trial_feature_usage.png)
+  ![Free Trial Feature Usage](freetrial2.png)
