@@ -24,7 +24,10 @@ Welcome to my portfolio! An outline of my completed projects that highlight my a
      - Identified states and cities with the highest concentration of shifts and staffing needs.
      - Revealed trends in user participation, highlighting opportunities for better workforce management.
      - 
- 
+ ## SQL Queries Used in the Project
+
+You can view the SQL queries used in this project in the [Shift_query file](Shift_query).
+
 
 
    **Image Previews**:
