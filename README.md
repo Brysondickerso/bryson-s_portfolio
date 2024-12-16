@@ -37,10 +37,10 @@ The Free Trial Dashboard analyzes the performance and engagement of users with N
 - **Skills Demonstrated**:  
    - Analyzing and visualizing data to track user behavior during a free trial.  
    - Creating impactful charts and graphs to display KPIs.  
--**Key Features**:  
+- **Key Features**:  
    - **User Engagement Metrics**: Track the number of users engaging with the free trial over time.   
    - **Trial Duration Analysis**: Analyze how the length of the free trial affects user engagement and conversion.
--**Key Insights**:  
+- **Key Insights**:  
    - Identified patterns in feature usage that correlate with higher conversion rates.  
    - Provided insights into optimizing the free trial experience to maximize user conversion.
 
