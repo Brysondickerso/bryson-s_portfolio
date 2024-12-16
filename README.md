@@ -33,23 +33,16 @@ Welcome to my portfolio! An outline of my completed projects that highlight my a
 
 **Description**:  
 The Free Trial Dashboard analyzes the performance and engagement of users with Nursegrid Manager's free trial. It displays key metrics and charts to visualize how trial users interacted with the platform, highlighting opportunities for conversion to paid subscriptions.
-
-**Tools Used**:  
-- Excel  
-- SQL
-- SigmaBI  
-
-**Skills Demonstrated**:  
-- Analyzing and visualizing data to track user behavior during a free trial.  
-- Creating impactful charts and graphs to display KPIs.  
-
-**Key Features**:  
-- **User Engagement Metrics**: Track the number of users engaging with the free trial over time.   
-- **Trial Duration Analysis**: Analyze how the length of the free trial affects user engagement and conversion.
-
-**Key Insights**:  
-- Identified patterns in feature usage that correlate with higher conversion rates.  
-- Provided insights into optimizing the free trial experience to maximize user conversion.
+- **Tools Used**: Excel, SQL, SigmaBI
+- **Skills Demonstrated**:  
+   - Analyzing and visualizing data to track user behavior during a free trial.  
+   - Creating impactful charts and graphs to display KPIs.  
+-**Key Features**:  
+   - **User Engagement Metrics**: Track the number of users engaging with the free trial over time.   
+   - **Trial Duration Analysis**: Analyze how the length of the free trial affects user engagement and conversion.
+-**Key Insights**:  
+   - Identified patterns in feature usage that correlate with higher conversion rates.  
+   - Provided insights into optimizing the free trial experience to maximize user conversion.
 
 **Image Previews**:
 - Overview of free trial user engagement:  
