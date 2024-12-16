@@ -80,4 +80,4 @@ The **User Certification & Licensing Dashboard** provides insights into the cert
   ![Certification Overview](cert.png)
 
 - Detailed view of user certifications by position:  
-  ![Position](user_certification_by_position.png)
+  ![Position](Positions.png)
