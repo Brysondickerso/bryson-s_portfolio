@@ -57,7 +57,7 @@ The Free Trial Dashboard analyzes the performance and engagement of users with N
 
 
 
-You can view the SQL queries used in this project in the [Free_trial_query file](Free_trial_query).
+You can view the SQL queries used in this project in the [Free_trial_query file](free_trial_query).
 
 
 **Image Previews**:
