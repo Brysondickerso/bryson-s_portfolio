@@ -56,3 +56,28 @@ The Free Trial Dashboard analyzes the performance and engagement of users with N
 
 - Feature usage analysis chart:  
   ![Free Trial Feature Usage](freetrial2.png)
+  
+---
+
+## 3. **User Certification & Licensing Dashboard**
+
+**Description**:  
+The **User Certification & Licensing Dashboard** provides insights into the certifications and positions of users who are logged into the Nursegrid app. The data for this project was sourced from internal databases and processed using SQL and Snowflake to ensure high performance with large datasets. 
+
+-**Tools Used**: SQL, Excel, Snowflake, Python
+ 
+-**Skills Demonstrated**:  
+   - **SQL Query Writing**: Wrote complex SQL queries to aggregate, join, and filter user data from multiple tables within Snowflake, ensuring that all relevant information about       certifications, positions, and licenses was available for analysis.  
+   - **Data Transformation in Snowflake**: Leveraged Snowflake’s cloud data platform to clean, transform, and aggregate large datasets efficiently, enabling faster querying and          data exploration.
+     
+-**Key Features**:  
+   - **Certification Tracking**: Track which certifications are held by users across various positions.  
+   - **Position-Based Insights**: Analyze how many users in each position hold the necessary certifications and licenses.  
+   - **Comprehensive Reporting**: Exportable reports to help stakeholders track certification statuses and workforce compliance across regions.
+
+**Image Previews**:
+- Overview of certification and licensing distribution:  
+  ![Certification & Licensing Overview](user_certification_overview.png)
+
+- Detailed view of user certifications by position:  
+  ![Certification & Licensing by Position](user_certification_by_position.png)
