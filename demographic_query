@@ -1,0 +1,85 @@
+SELECT 
+  al.userid,
+  un.first,
+  un.last,
+  e.email,
+  c.name,
+  al.datecreated AS "opened app"
+FROM
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.ACTIVITY_LOG AS al
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.USER_CERTIFICATION AS uc 
+  ON al.userid = uc.userid
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.CERTIFICATION AS c 
+  ON uc.certificationid = c.certificationid
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.USER_NAME AS un 
+  ON al.userid = un.userid
+LEFT JOIN 
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.EMAILS AS e 
+  ON al.userid = e.emailid
+WHERE
+  al.activityid = 6
+  AND al.datecreated >= DATE_TRUNC('YEAR', CURRENT_DATE)
+ORDER BY 
+  al.datecreated DESC
+
+----------
+
+SELECT
+al.userid, 
+un.first, 
+un.last, 
+p.title, 
+e.email,
+al.datecreated AS "opened app" 
+FROM
+NURSEGRID_PROD.NURSEGRID_PROCESSED.ACTIVITY_LOG AS al 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.USER_POSITION AS up
+  ON al.userid = up.userid 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.POSITION AS p
+  ON up.positionid = p.positionid 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.USER_NAME AS un
+  ON al.userid = un.userid 
+LEFT JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.EMAILS AS e
+  ON al.userid = e.emailid 
+WHERE
+  al.activityid = 6
+  AND al.datecreated >= DATE_TRUNC('YEAR', CURRENT_DATE) 
+ORDER BY
+  al.datecreated DESC
+
+----------
+
+SELECT
+al.userid,
+un.first,
+un.last,
+l.name,
+ul.state AS "State Licensed", 
+e.email,
+al.datecreated AS "opened app" 
+FROM
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.ACTIVITY_LOG AS al
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.USER_LICENSE AS ul 
+  ON al.userid = ul.userid
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.LICENSE AS l 
+  ON ul.licenseid = l.licenseid
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.USER_NAME AS un 
+  ON al.userid = un.userid
+LEFT JOIN 
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.EMAILS AS e 
+  ON al.userid = e.emailid
+WHERE
+  al.activityid = 6
+  AND al.datecreated >= DATE_TRUNC('YEAR', CURRENT_DATE)
+ORDER BY 
+  al.datecreated DESC
