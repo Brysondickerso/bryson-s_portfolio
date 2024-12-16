@@ -78,8 +78,8 @@ The **User Certification & Licensing Dashboard** provides insights into the cert
 - **Tools Used**: SQL, Excel, Snowflake, Python
  
 - **Skills Demonstrated**:  
-   - **SQL Query Writing**: Wrote complex SQL queries to aggregate, join, and filter user data from multiple tables within Snowflake, ensuring that all relevant information about       certifications, positions, and licenses was available for analysis.  
-   - **Data Transformation in Snowflake**: Leveraged Snowflake’s cloud data platform to clean, transform, and aggregate large datasets efficiently, enabling faster querying and          data exploration.
+   - **SQL Query Writing**: Wrote complex SQL queries to aggregate, join, and filter user data from multiple tables within Snowflake, ensuring that all relevant information about          certifications, positions, and licenses was available for analysis.  
+   - **Data Transformation in Snowflake**: Leveraged Snowflake’s cloud data platform to clean, transform, and aggregate large datasets efficiently, enabling faster querying and             data exploration.
      
 - **Key Features**:  
    - **Certification Tracking**: Track which certifications are held by users across various positions.  
