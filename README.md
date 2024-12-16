@@ -85,6 +85,10 @@ The **User Certification & Licensing Dashboard** provides insights into the cert
    - **Position-Based Insights**: Analyze how many users in each position hold the necessary certifications and licenses.  
    - **Comprehensive Reporting**: Exportable reports to help stakeholders track certification statuses and workforce compliance across regions.
 
+
+You can view the SQL queries used in this project in the [demographic_query file](demographic_query).
+
+
 **Image Previews**:
 - Overview of certification and licensing distribution:  
   ![Certification Overview](cert.png)
