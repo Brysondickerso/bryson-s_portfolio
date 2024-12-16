@@ -86,7 +86,7 @@ The **User Certification & Licensing Dashboard** provides insights into the cert
    - **Comprehensive Reporting**: Exportable reports to help stakeholders track certification statuses and workforce compliance across regions.
 
 
-You can view the SQL queries used in this project in the [demographic_query file](demographic_query).
+You can view the SQL queries used in this project in the [demographic_query file](demographic_query). 
 
 
 **Image Previews**:
