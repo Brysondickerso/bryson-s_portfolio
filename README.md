@@ -75,13 +75,13 @@ You can view the SQL queries used in this project in the [demographic_query file
 **Description**:  
 The **User Certification & Licensing Dashboard** provides insights into the certifications and positions of users who are logged into the Nursegrid app. The data for this project was sourced from internal databases and processed using SQL and Snowflake to ensure high performance with large datasets. 
 
--**Tools Used**: SQL, Excel, Snowflake, Python
+- **Tools Used**: SQL, Excel, Snowflake, Python
  
--**Skills Demonstrated**:  
+- **Skills Demonstrated**:  
    - **SQL Query Writing**: Wrote complex SQL queries to aggregate, join, and filter user data from multiple tables within Snowflake, ensuring that all relevant information about       certifications, positions, and licenses was available for analysis.  
    - **Data Transformation in Snowflake**: Leveraged Snowflake’s cloud data platform to clean, transform, and aggregate large datasets efficiently, enabling faster querying and          data exploration.
      
--**Key Features**:  
+- **Key Features**:  
    - **Certification Tracking**: Track which certifications are held by users across various positions.  
    - **Position-Based Insights**: Analyze how many users in each position hold the necessary certifications and licenses.  
    - **Comprehensive Reporting**: Exportable reports to help stakeholders track certification statuses and workforce compliance across regions.
