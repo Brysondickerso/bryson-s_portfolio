@@ -49,6 +49,8 @@ The Free Trial Dashboard analyzes the performance and engagement of users with N
 - **Key Insights**:  
    - Identified patterns in feature usage that correlate with higher conversion rates.  
    - Provided insights into optimizing the free trial experience to maximize user conversion.
+ 
+  ![Free Trial Dashboard Engagement](freetrial.png)
 
 **Image Previews**:
 - Overview of free trial user engagement:  
