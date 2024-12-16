@@ -1,6 +1,6 @@
-# Bryson's Data Analytics Portfolio
+# Bryson's Portfolio
 
-Welcome to my portfolio! Below, you will find an overview of the projects I've worked on, showcasing my skills in data analytics, visualization, and reporting. Each project demonstrates my ability to analyze data, generate insights, and communicate findings effectively.
+Welcome to my portfolio! An outline of my completed projects that highlight my abilities in data analytics, reporting, and visualization can be found below. Every project shows my capacity for data analysis, insight generation, and clear communication of results.
 
 ---
 
