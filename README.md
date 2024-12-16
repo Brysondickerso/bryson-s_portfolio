@@ -70,7 +70,6 @@ You can view the SQL queries used in this project in the [Free_trial_query file]
 ---
 
 ## 3. **User Certification & Licensing Dashboard**
-You can view the SQL queries used in this project in the [demographic_query file](demographic_query)
 
 **Description**:  
 The **User Certification & Licensing Dashboard** provides insights into the certifications and positions of users who are logged into the Nursegrid app. The data for this project was sourced from internal databases and processed using SQL and Snowflake to ensure high performance with large datasets. 
@@ -87,7 +86,10 @@ The **User Certification & Licensing Dashboard** provides insights into the cert
    - **Comprehensive Reporting**: Exportable reports to help stakeholders track certification statuses and workforce compliance across regions.
 
 
-You can view the SQL queries used in this project in the [demographic_query file](demographic_query). 
+## SQL Queries Used in the Project
+
+You can view the SQL queries used in this project in the [demographic_query file](demographic_query).
+
 
 
 **Image Previews**:
