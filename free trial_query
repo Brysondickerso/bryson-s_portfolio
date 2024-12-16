@@ -1,0 +1,123 @@
+WITH
+  free_trial_users AS (
+SELECT
+  user_name.first,
+  user_name.last,
+  emails.email, 
+  managed_department.managedDepartmentId, 
+  department.departmentName, 
+  hospital.hospitalName, 
+  subscription.planCode,
+  subscription.created
+FROM 
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.subscription
+JOIN 
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.managed_department 
+  ON managed_department.subscriptionId = subscription.subscriptionId
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.department
+  ON managed_department.departmentId = department.departmentId
+JOIN 
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.hospital
+  ON managed_department.hospitalId = hospital.hospitalId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.account
+  ON account.accountId = subscription.accountId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.user_name
+  ON user_name.userId = account.ownerId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.emails
+  ON emails.entityId = account.ownerId AND emails.entityType = 'user'  
+WHERE
+  subscription.planCode = 'free_trial'
+  AND subscription.created >= DATEADD(month, -6, CURRENT_DATE) -- Last 6 months dynamically 
+  AND CHARINDEX('nursegrid', emails.email) = 0
+GROUP BY
+  user_name.first,
+  user_name.last,
+  emails.email, 
+  managed_department.managedDepartmentId, 
+  department.departmentName, 
+  hospital.hospitalName, 
+  subscription.planCode,
+  subscription.created
+),
+ranked_users AS ( 
+SELECT
+  un.first,
+  un.last, 
+w.userId, 
+h.hospitalId, 
+h.hospitalName, 
+d.departmentId,
+d.departmentName, 
+w.managedDepartmentId, 
+s.created, 
+s.expirationDate,
+e.email,
+ROW_NUMBER() OVER (PARTITION BY w.userId ORDER BY s.created DESC) AS rn 
+FROM
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.worksite w 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.hospital h
+  ON w.hospitalId = h.hospitalId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.department d
+  ON w.departmentId = d.departmentId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.user_name un
+  ON w.userId = un.userId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.managed_department md
+  ON w.managedDepartmentId = md.managedDepartmentId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.subscription s
+  ON md.subscriptionId = s.subscriptionId 
+JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.account
+  ON w.userId = account.ownerId 
+LEFT JOIN
+  NURSEGRID_PROD.NURSEGRID_PROCESSED.emails e
+  ON w.userId = e.entityId 
+WHERE
+  s.planCode = 'free_trial' AND e.entityType = 'user'
+  AND w.managedDepartmentId NOT IN (3135, 3136, 3137, 3139, 3140, 3141, 3142, 3144, 3145, 3154, 3165, 3182, 3184, 3185)
+  AND account.deleted IS NULL
+  AND w.deleted IS NULL
+  AND md.deleted IS NULL
+  AND s.created >= DATEADD(month, -6, CURRENT_DATE) -- Last 6 months dynamically AND CHARINDEX('nursegrid', e.email) = 0
+  AND CHARINDEX('example', e.email) = 0
+  AND CHARINDEX('healthstream', e.email) = 0  
+)
+SELECT  
+first, 
+last,
+userId,
+hospitalId, 
+hospitalName, 
+departmentId, 
+departmentName, 
+managedDepartmentId, 
+created, 
+expirationDate,
+email,
+CASE
+  WHEN expirationDate < CURRENT_DATE THEN 'Expired'
+  ELSE 'Active'
+END AS subscription_status
+FROM 
+  ranked_users
+WHERE
+  rn = 1 -- Only select the most recent subscription per user
+ORDER BY 
+subscription_status,
+
+
+
+
+
+
+
+
+
