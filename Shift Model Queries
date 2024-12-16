@@ -1,0 +1,25 @@
+SELECT
+shift.userid, -- Added user ID column hospital.hospitalname,
+department.departmentname,
+hospital.healthsystem, -- Added health system column a.city,
+a.state,
+a.postalcode, -- Added postal code column
+shift."start" AS shift_start_time -- Showing the exact time the shift started with quotes around "start"
+FROM NURSEGRID_PROD.NURSEGRID_PROCESSED.shift shift
+LEFT JOIN NURSEGRID_PROD.NURSEGRID_PROCESSED.node node ON shift.nodeid = node.nodeid
+AND node.type = 'department'
+LEFT JOIN NURSEGRID_PROD.NURSEGRID_PROCESSED.managed_department managed_department ON node.entityid = managed_department.manageddepartmentid
+AND managed_department.deleted IS NULL
+LEFT JOIN NURSEGRID_PROD.NURSEGRID_PROCESSED.worksite worksite ON shift.worksiteid = worksite.worksiteid
+LEFT JOIN NURSEGRID_PROD.NURSEGRID_PROCESSED.hospital hospital ON worksite.hospitalid = hospital.hospitalid
+LEFT JOIN NURSEGRID_PROD.NURSEGRID_PROCESSED.address a ON hospital.hospitalid = a.entityid
+LEFT JOIN NURSEGRID_PROD.NURSEGRID_PROCESSED.department department ON worksite.departmentid = department.departmentid
+AND worksite.deleted IS NULL
+WHERE
+shift.deleted IS NULL
+AND shift.shifttypeid = 0 -- Only working shifts
+AND (managed_department.manageddepartmentid IS NOT NULL OR worksite.worksiteid IS NOT NULL) -- A hospitalid must exist
+AND shift."start" >= '2024-01-01' -- Start date of shifts (beginning of the year) AND shift."start" <= CURRENT_DATE -- End date of shifts (current date)
+AND a.entitytype = 'hospital'
+ORDER BY
+shift.userid, a.state, hospital.hospitalname, department.departmentname
